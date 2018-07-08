@@ -12,25 +12,15 @@ def setup
 end
 
 def test_check_for_ace
-  assert_equal(false, @card.values_at)
+  assert_equal(false, Card.check_for_ace(@card1))
 end
 
 def test_highest_card
-  assert_equal(10, @card1.value)
+  assert_equal(10, Card.highest_card(@card1, @card2))
 end
 #
 def test_cards_total
-  assert_equal(17, @card.values_at)
+  assert_equal(17, Card.cards_total(@card))
 end
 
 end
-
-# def test_customer_can_afford_pet__insufficient_funds
-#   customer = @customers[1]
-#   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-#   assert_equal(false, can_buy_pet)
-# end
-#
-# def customer_can_afford_pet(customer, pet)
-#   return customer[:cash] >= pet[:price]
-# end
